@@ -35,75 +35,39 @@
 
         /* Header */
         header {
-            background: rgba(2, 2, 2, 0.95);
-            backdrop-filter: blur(20px);
-            color: var(--white);
-            padding: 1.2rem 0;
+            background: #FDF0CE;
+            padding: 1rem 0;
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 30px rgba(0,0,0,0.15);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
         }
 
         header.scrolled {
-            background: rgba(2, 2, 2, 0.98);
+            background: #FDF0CE;
             padding: 0.8rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
         }
 
         nav {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 2rem;
         }
 
-        .logo {
-            font-size: 2.2rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--primary-color), var(--orange-accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            filter: drop-shadow(0 0 10px rgba(240, 149, 22, 0.3));
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2.5rem;
-        }
-
-        .nav-links a {
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 500;
-            position: relative;
+        .logo img {
+            height: 60px;
+            width: auto;
             transition: all 0.3s ease;
         }
 
-        .nav-links a:hover {
-            color: var(--primary-color);
-            transform: translateY(-2px);
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 50%;
-            background: linear-gradient(135deg, var(--primary-color), var(--orange-accent));
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
+        .logo:hover img {
+            transform: scale(1.05);
         }
 
         /* Banner Section */
@@ -470,6 +434,48 @@
             transform: translateY(0);
         }
 
+        /* Section CTAs */
+        .section-cta {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary-color);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(240, 149, 22, 0.2);
+            border: none;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            margin: 0 0.5rem;
+        }
+
+        .cta-btn:hover {
+            background: #e08a13;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(240, 149, 22, 0.3);
+        }
+
+        .cta-btn.secondary {
+            background: rgba(240, 149, 22, 0.1);
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .cta-btn.secondary:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
         /* Clients Section */
         .clients {
             background: #f9f9f9;
@@ -644,6 +650,7 @@
                 url('data:image/svg+xml,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="%23f09516" stroke-width="0.3" opacity="0.03"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)" /></svg>');
             opacity: 0.5;
             animation: slideBackground 30s linear infinite;
+            pointer-events: none; /* don't block clicks on CTAs */
         }
 
         @keyframes slideBackground {
@@ -963,63 +970,35 @@
 
         /* Footer */
         footer {
-            background: linear-gradient(135deg, var(--dark-color) 0%, var(--text-color) 100%);
-            color: var(--white);
+            background: #FDF0CE;
+            color: var(--text-color);
             text-align: center;
-            padding: 4rem 0 2rem;
+            padding: 3rem 0 2rem;
             position: relative;
-            overflow: hidden;
         }
 
-        footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(135deg, var(--primary-color), var(--orange-accent));
-        }
-
-        .footer-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .footer-cta {
-            margin-bottom: 3rem;
-        }
-
-        .footer-cta h3 {
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .footer-cta p {
-            font-size: 1.2rem;
-            opacity: 0.9;
+        .footer-logo {
             margin-bottom: 2rem;
         }
 
-        .footer-contact {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
+        .footer-logo img {
+            height: 80px;
+            width: auto;
         }
 
-        .footer-contact-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+        .footer-address {
             font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-color);
+            max-width: 400px;
+            margin: 0 auto;
         }
 
-        .footer-contact-item i {
-            color: var(--primary-color);
+        .footer-address .company-name {
+            font-weight: 600;
             font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            display: block;
         }
 
         /* Animations */
@@ -1130,8 +1109,8 @@
         }
 
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
+            .logo img {
+                height: 45px;
             }
 
             .banner {
@@ -1199,9 +1178,12 @@
                 font-size: 2.8rem;
             }
 
-            .footer-contact {
-                flex-direction: column;
-                gap: 1.5rem;
+            .footer-logo img {
+                height: 60px;
+            }
+
+            .footer-address {
+                font-size: 1rem;
             }
         }
 
@@ -1253,6 +1235,23 @@
             
             .step-connector {
                 display: none;
+            }
+
+            .logo img {
+                height: 40px;
+            }
+
+            .footer-logo img {
+                height: 50px;
+            }
+
+            .footer-address {
+                font-size: 0.9rem;
+                padding: 0 1rem;
+            }
+
+            .footer-address .company-name {
+                font-size: 1rem;
             }
         }
         
@@ -1385,6 +1384,7 @@
             overflow: hidden;
             z-index: 1;
             opacity: 0.6;
+            pointer-events: none; /* ensure decorative dots don't intercept clicks */
         }
 
         .dot {
@@ -1404,6 +1404,8 @@
             background: rgba(97, 206, 112, 0.5);
             border-radius: 50%;
             animation: float 12s linear infinite;
+            position: relative; /* make sure it can be stacked above overlays */
+            z-index: 50;
         }
     </style>
 </head>
@@ -1411,15 +1413,9 @@
     <!-- Header -->
     <header>
         <nav>
-            <div class="logo">Agni Solar</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#process">Our Process</a></li>
-                <li><a href="#clients">Clients</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
+            <div class="logo">
+                <img src="./images/logo1-1.png" alt="Agni Solar">
+            </div>
         </nav>
     </header>
 
@@ -1450,10 +1446,6 @@
             </div>
             
             <div class="banner-buttons">
-                <a href="#contact" class="cta-button">
-                    <i class="fas fa-calculator"></i>
-                    Calculate Your Savings
-                </a>
                 <a href="#services" class="secondary-button">
                     <i class="fas fa-play-circle"></i>
                     Watch How It Works
@@ -1560,6 +1552,16 @@
                 <p>ESG compliance support, carbon credit optimization, and sustainability reporting. Achieve net-zero goals with our expert guidance.</p>
             </div>
         </div>
+        <div class="section-cta">
+            <a href="#home" class="cta-btn scroll-to-form">
+                <i class="fas fa-calculator"></i>
+                Get Free Quote
+            </a>
+            <a href="#home" class="cta-btn secondary scroll-to-form">
+                <i class="fas fa-phone"></i>
+                Talk To Us
+            </a>
+        </div>
     </section>
 
     <!-- Process Section -->
@@ -1640,6 +1642,9 @@
                 <p>Dedicated experts ensuring maximum uptime with proactive maintenance</p>
             </div>
         </div>
+        <div class="section-cta">
+            <a href="#home" class="cta-btn scroll-to-form">Get Your Free Quote</a>
+        </div>
     </section>
 
     <!-- Testimonials Section -->
@@ -1687,6 +1692,9 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="section-cta">
+            <a href="#home" class="cta-btn scroll-to-form">Talk To Us Now</a>
         </div>
     </section>
 
@@ -1736,44 +1744,13 @@
 
     <!-- Footer -->
     <footer id="contact">
-        <div class="footer-content">
-            <div class="section">
-                <div class="footer-cta">
-                    <h3>🚀 Ready to Transform Your Energy Future?</h3>
-                    <p>Join 500+ businesses who have already made the smart switch to solar. Get your free consultation today and discover how much you can save!</p>
-                    <div class="banner-buttons">
-                        <a href="tel:+919876543210" class="cta-button">
-                            <i class="fas fa-phone"></i>
-                            Call Now: +91 98765 43210
-                        </a>
-                        <a href="mailto:info@agnisolar.com" class="secondary-button">
-                            <i class="fas fa-envelope"></i>
-                            Email Us
-                        </a>
-                    </div>
-                </div>
-                <div class="footer-contact">
-                    <div class="footer-contact-item">
-                        <i class="fas fa-phone"></i>
-                        <span>+91 98765 43210</span>
-                    </div>
-                    <div class="footer-contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>info@agnisolar.com</span>
-                    </div>
-                    <div class="footer-contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Mumbai | Delhi | Bangalore | Pune</span>
-                    </div>
-                    <div class="footer-contact-item">
-                        <i class="fas fa-globe"></i>
-                        <span>www.agnisolar.com</span>
-                    </div>
-                </div>
-            </div>
+        <div class="footer-logo">
+            <img src="./images/logo1-1.png" alt="Agni Solar">
         </div>
-        <div style="border-top: 1px solid var(--primary-color); margin-top: 2rem; padding-top: 1rem; opacity: 0.8;">
-            <p>&copy; 2024 Agni Solar. All rights reserved. | Transforming businesses with clean energy since 2009</p>
+        <div class="footer-address">
+            <span class="company-name">AGNI SOLAR SYSTEMS PVT. LTD.</span>
+            702 Onyx, North Main Road,<br>
+            Koregoan Park, Pune 411001
         </div>
     </footer>
 
@@ -1823,6 +1800,17 @@
                 // Toggle current FAQ item
                 this.classList.toggle('active');
                 answer.classList.toggle('active');
+            });
+        });
+
+        // CTA button scroll functionality
+        document.querySelectorAll('.scroll-to-form').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector('#home .contact-form').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
             });
         });
 
