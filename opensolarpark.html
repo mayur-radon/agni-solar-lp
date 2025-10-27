@@ -745,6 +745,188 @@
             line-height: 1.6;
         }
 
+        /* Clients Section */
+        .clients {
+            background: #f9f9f9;
+            position: relative;
+        }
+
+        .clients::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23f09516" fill-opacity="0.03" fill-rule="nonzero"><circle cx="30" cy="30" r="2"/></g></svg>');
+            pointer-events: none;
+        }
+
+        .clients .section-title {
+            color: var(--text-color);
+        }
+
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .client-logo {
+            background: #ebebeb;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .client-logo.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .client-logo:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+            border-color: rgba(240, 149, 22, 0.2);
+        }
+
+        .client-logo img {
+            max-width: 100%;
+            height: 65px;
+            object-fit: contain;
+            filter: grayscale(70%);
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+
+        .client-logo:hover img {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: linear-gradient(135deg, var(--light-peach) 0%, var(--light-yellow) 100%);
+            position: relative;
+        }
+
+        .testimonials::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23f09516" fill-opacity="0.03"><path d="M20 20l-10-10h20z"/></g></svg>');
+            pointer-events: none;
+        }
+
+        .testimonials .section-title {
+            color: var(--text-color);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 2rem 1.8rem;
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(240, 149, 22, 0.1);
+            position: relative;
+            opacity: 0;
+            transform: translateY(50px) scale(0.95);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid rgba(240, 149, 22, 0.1);
+            overflow: hidden;
+        }
+
+        .testimonial-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, var(--primary-color), var(--orange-accent));
+        }
+
+        .testimonial-card::after {
+            content: '"';
+            font-size: 6rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--primary-color), var(--orange-accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: absolute;
+            top: -20px;
+            right: 10px;
+            opacity: 0.3;
+        }
+
+        .testimonial-card.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(240, 149, 22, 0.15);
+            border-color: var(--primary-color);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 2rem;
+            color: var(--secondary-color);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            position: relative;
+            z-index: 2;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--orange-accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .author-info h4 {
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 0.2rem;
+        }
+
+        .author-info p {
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+        }
+
         /* FAQ Section */
         .faq {
             background: var(--white);
@@ -851,7 +1033,7 @@
         }
 
         .footer-logo img {
-            height: 80px;
+            height: 40px;
             width: auto;
         }
 
@@ -917,6 +1099,14 @@
         }
 
         @media (max-width: 968px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .clients-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
             .banner {
                 grid-template-columns: 1fr;
                 gap: 3rem;
@@ -999,6 +1189,11 @@
 
             .features-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .clients-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
             
             .process-steps {
@@ -1131,7 +1326,7 @@
                     <span class="banner-stat-label">MW Capacity</span>
                 </div>
                 <div class="banner-stat">
-                    <span class="banner-stat-number">100+</span>
+                    <span class="banner-stat-number">10+</span>
                     <span class="banner-stat-label">Solar Parks</span>
                 </div>
             </div>
@@ -1166,6 +1361,34 @@
                     Get My Free Consultation
                 </button>
             </form>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section class="section clients">
+        <div class="container">
+            <h2 class="section-title">Trusted by Leading Organizations</h2>
+            <div class="section-subtitle">Join the growing community of businesses that trust Agni Solar for their renewable energy needs</div>
+            <div class="clients-grid">
+                <div class="client-logo">
+                    <img src="./images\clients\Atur-India-Logo.png" alt="Atur India">
+                </div>
+                <div class="client-logo">
+                    <img src="./images\clients\bp.webp" alt="BP Energy">
+                </div>
+                <div class="client-logo">
+                    <img src="./images/clients/clover_logo.png" alt="Clover Infotech">
+                </div>
+                <div class="client-logo">
+                    <img src="./images/clients/KSH-International_Logo_02-1.png" alt="KSH International">
+                </div>
+                <div class="client-logo">
+                    <img src="./images/clients/mercedes-benz-logo-1.png" alt="Mercedes-Benz">
+                </div>
+                <div class="client-logo">
+                    <img src="./images/clients/Vascon-logo.png" alt="Vascon Engineers">
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1319,6 +1542,62 @@
         </div>
     </section>
 
+    <!-- Testimonials Section -->
+    <section class="section testimonials">
+        <h2 class="section-title">What Our Solar Park Partners Say</h2>
+        <div class="section-subtitle">Hear from businesses that have successfully implemented Open Access Solar Parks with Agni Solar</div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    "Agni Solar's Open Access Solar Park solution transformed our energy costs. We're now saving 40% on electricity bills while meeting our sustainability goals. Their expertise in managing grid connectivity and regulatory compliance was invaluable."
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">R</div>
+                    <div class="author-info">
+                        <h4>Rajesh Kumar</h4>
+                        <p>CFO, Manufacturing Corp</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    "The seamless integration with the grid and transparent energy trading through their solar park has exceeded our expectations. Agni Solar's professional approach to project management made the entire process smooth and efficient."
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">P</div>
+                    <div class="author-info">
+                        <h4>Priya Sharma</h4>
+                        <p>Energy Manager, Tech Solutions Ltd</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    "Our partnership with Agni Solar for the Open Access Solar Park has been a game-changer. The reduction in our carbon footprint and operational costs has significantly improved our bottom line and brand reputation."
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">A</div>
+                    <div class="author-info">
+                        <h4>Amit Patel</h4>
+                        <p>Sustainability Director, Green Industries</p>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-text">
+                    "The technical expertise and ongoing support from Agni Solar's team has been exceptional. Our solar park is performing beyond projected capacity, and the energy cost savings are helping us invest in business growth."
+                </div>
+                <div class="testimonial-author">
+                    <div class="author-avatar">S</div>
+                    <div class="author-info">
+                        <h4>Sunita Reddy</h4>
+                        <p>Operations Head, Textile Mills Group</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- FAQ Section -->
     <section class="section faq">
         <h2 class="section-title">Frequently Asked Questions</h2>
@@ -1403,7 +1682,7 @@
         });
 
         // Observe elements for animation
-        document.querySelectorAll('.section-title, .section-subtitle, .feature-card, .benefit-card, .process-step, .faq-item').forEach(el => {
+        document.querySelectorAll('.section-title, .section-subtitle, .feature-card, .benefit-card, .process-step, .faq-item, .client-logo, .testimonial-card').forEach(el => {
             observer.observe(el);
         });
 
