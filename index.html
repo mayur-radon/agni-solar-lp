@@ -820,8 +820,8 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             position: absolute;
-            top: 20px;
-            right: 30px;
+            top: -20px;
+            right: 10px;
             opacity: 0.3;
         }
 
@@ -1440,7 +1440,7 @@
                     <span class="banner-stat-label">Installed Capacity</span>
                 </div>
                 <div class="banner-stat">
-                    <span class="banner-stat-number">10+</span>
+                    <span class="banner-stat-number">30+</span>
                     <span class="banner-stat-label">Years of Experience</span>
                 </div>
             </div>
@@ -1611,7 +1611,7 @@
                 <div class="usp-icon">
                     <i class="fas fa-medal"></i>
                 </div>
-                <span class="usp-number">10+</span>
+                <span class="usp-number">30+</span>
                 <h3>Years of Excellence</h3>
                 <p>With over a decade of experience, we are one of the most trusted solar energy companies in India.</p>
             </div>
@@ -1698,7 +1698,7 @@
 
     <!-- FAQ Section -->
     <section class="section faq">
-        <h2 class="section-title">Frequently Asked Questions❓</h2>
+        <h2 class="section-title">Frequently Asked Questions</h2>
         <div class="section-subtitle">Get answers to common questions about commercial solar installations</div>
         <div class="faq-container">
             <div class="faq-item">
@@ -1743,6 +1743,15 @@
             <span class="company-name">AGNI SOLAR SYSTEMS PVT. LTD.</span>
             702 Onyx, North Main Road,<br>
             Koregoan Park, Pune 411001
+        </div>
+        
+        <!-- Dev Navigation (Remove Later) -->
+        <div style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #ddd;">
+            <div style="font-size: 0.9rem; color: #666;">
+                <strong>Navigation:</strong> 
+                <a href="index.html" style="color: var(--primary-color); text-decoration: none; margin: 0 0.5rem;">Commercial Solar</a> | 
+                <a href="opensolarpark.html" style="color: var(--primary-color); text-decoration: none; margin: 0 0.5rem;">Open Access Solar Park</a>
+            </div>
         </div>
     </footer>
 
@@ -1891,6 +1900,11 @@
             const counters = document.querySelectorAll('.usp-number');
             
             counters.forEach(counter => {
+                // Skip animation for "24/7" text
+                if (counter.textContent.includes('/')) {
+                    return;
+                }
+                
                 const target = counter.textContent.replace(/[^0-9]/g, '');
                 const increment = target / 50;
                 let current = 0;

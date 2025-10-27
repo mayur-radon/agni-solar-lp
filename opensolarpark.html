@@ -1,0 +1,1523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agni Solar - Open Access Solar Park | 30 Years of Solar Excellence</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #f09516;
+            --secondary-color: #545454;
+            --text-color: #000000;
+            --accent-color: #61CE70;
+            --dark-color: #020202;
+            --light-peach: #FFE5DA;
+            --white: #FFFFFF;
+            --light-yellow: #FDF6BC;
+            --orange-accent: #F58220;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Header */
+        header {
+            background: #FDF0CE;
+            padding: 0.5rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            background: #FDF0CE;
+            padding: 0.4rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .logo img {
+            height: 40px;
+            width: auto;
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Banner Section */
+        .banner {
+            background: 
+                linear-gradient(90deg, 
+                    rgba(255, 255, 255, 0.95) 0%, 
+                    rgba(255, 255, 255, 0.85) 60%,
+                    rgba(255, 255, 255, 0.7) 100%
+                ),
+                url('./images/solar-park.jpg') right center/cover;
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            align-items: center;
+            gap: 4rem;
+            padding: 80px 5% 50px;
+            color: var(--text-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 80% 20%, rgba(240, 149, 22, 0.05) 0%, transparent 40%);
+            z-index: 1;
+        }
+
+        .banner::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent 0%, rgba(240, 149, 22, 0.03) 100%);
+            z-index: 1;
+        }
+
+        .banner > * {
+            position: relative;
+            z-index: 3;
+        }
+
+        .banner-content {
+            max-width: 100%;
+            animation: slideInLeft 1.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .banner .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(240, 149, 22, 0.08);
+            border: 1px solid rgba(240, 149, 22, 0.15);
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            box-shadow: 0 5px 15px rgba(240, 149, 22, 0.05);
+        }
+
+        .banner .badge i {
+            color: var(--primary-color);
+            font-size: 1rem;
+        }
+
+        .banner h1 {
+            font-size: 3.2rem;
+            margin-bottom: 2rem;
+            line-height: 1.05;
+            font-weight: 700;
+        }
+
+        .banner h1 .highlight {
+            background: linear-gradient(135deg, var(--primary-color), var(--orange-accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .banner h1 .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(135deg, var(--primary-color), var(--orange-accent));
+            border-radius: 2px;
+            animation: slideInLeft 1s ease-out 0.5s both;
+        }
+
+        .banner .subtitle {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            font-weight: 400;
+            color: var(--secondary-color);
+            line-height: 1.5;
+        }
+
+        .banner-stats {
+            display: flex;
+            justify-content: flex-start;
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .banner-stat {
+            text-align: center;
+        }
+
+        .banner-stat-number {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            line-height: 1;
+            margin-top: 0.3rem;
+        }
+
+        .banner-stat-label {
+            font-size: 0.95rem;
+            color: var(--secondary-color);
+            font-weight: 500;
+        }
+
+        .banner-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary-color);
+            color: white;
+            padding: 16px 38px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(240, 149, 22, 0.2);
+            border: none;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            background: #e08a13;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(240, 149, 22, 0.3);
+        }
+
+        .cta-button:active {
+            transform: translateY(-1px);
+        }
+
+        .secondary-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(240, 149, 22, 0.1);
+            color: var(--primary-color);
+            padding: 16px 38px;
+            border: 2px solid var(--primary-color);
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .secondary-button:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(240, 149, 22, 0.3);
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2.8rem;
+            border-radius: 25px;
+            box-shadow: 0 25px 60px rgba(240, 149, 22, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(240, 149, 22, 0.1);
+            animation: slideInRight 1.5s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+        }
+
+        .contact-form::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, var(--primary-color), var(--orange-accent));
+            border-radius: 25px 25px 0 0;
+        }
+
+        .contact-form h3 {
+            color: var(--text-color);
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+            font-weight: 600;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary-color), var(--orange-accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #e8e8e8;
+            border-radius: 15px;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+            background: var(--white);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(240, 149, 22, 0.1);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #999;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: var(--primary-color);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 15px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .submit-btn:hover {
+            background: #e08a13;
+            transform: translateY(-2px);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Sections */
+        .section {
+            padding: 60px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 4rem;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+        }
+
+        .section-title.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(135deg, var(--primary-color), var(--orange-accent));
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--secondary-color);
+            margin-bottom: 3rem;
+            font-weight: 400;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s;
+        }
+
+        .section-subtitle.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Section CTAs */
+        .section-cta {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--primary-color);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(240, 149, 22, 0.2);
+            border: none;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            margin: 0 0.5rem;
+            position: relative;
+            z-index: 50;
+        }
+
+        .cta-btn:hover {
+            background: #e08a13;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(240, 149, 22, 0.3);
+        }
+
+        .cta-btn.secondary {
+            background: rgba(240, 149, 22, 0.1);
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .cta-btn.secondary:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        /* Why Choose Section */
+        .why-choose {
+            background: #f9f9f9;
+            position: relative;
+        }
+
+        .why-choose::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23f09516" fill-opacity="0.03" fill-rule="nonzero"><circle cx="30" cy="30" r="2"/></g></svg>');
+            pointer-events: none;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 2.5rem 2rem;
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(240, 149, 22, 0.08);
+            text-align: left;
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            opacity: 0;
+            transform: translateY(50px) scale(0.9);
+            border: 1px solid rgba(240, 149, 22, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, var(--primary-color), var(--orange-accent));
+        }
+
+        .feature-card.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(240, 149, 22, 0.15);
+            border-color: var(--primary-color);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-color), var(--orange-accent));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+            color: var(--white);
+            box-shadow: 0 10px 25px rgba(240, 149, 22, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 15px 35px rgba(240, 149, 22, 0.4);
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: var(--secondary-color);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            color: var(--secondary-color);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .feature-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        /* Process Section */
+        .process {
+            background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%);
+            position: relative;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+            position: relative;
+        }
+
+        .process-step {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(0, 0, 0, 0.04);
+            position: relative;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+            z-index: 2;
+        }
+
+        .process-step.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .process-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(240, 149, 22, 0.1);
+            border-color: rgba(240, 149, 22, 0.1);
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: rgba(240, 149, 22, 0.1);
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            position: relative;
+        }
+
+        .process-step:hover .step-number {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .process-step h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .process-step p {
+            color: var(--secondary-color);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            background: linear-gradient(135deg, var(--light-peach) 0%, var(--light-yellow) 100%);
+            position: relative;
+        }
+
+        .benefits::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23f09516" fill-opacity="0.03"><path d="M20 20l-10-10h20z"/></g></svg>');
+            pointer-events: none;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .benefit-card {
+            background: var(--white);
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(240, 149, 22, 0.1);
+            text-align: center;
+            opacity: 0;
+            transform: translateY(50px) scale(0.95);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid rgba(240, 149, 22, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, var(--primary-color), var(--orange-accent));
+        }
+
+        .benefit-card.visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(240, 149, 22, 0.15);
+            border-color: var(--primary-color);
+        }
+
+        .benefit-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(240, 149, 22, 0.1);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .benefit-card:hover .benefit-icon {
+            transform: scale(1.1);
+            background: rgba(240, 149, 22, 0.15);
+        }
+
+        .benefit-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+
+        .benefit-card p {
+            color: var(--secondary-color);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* FAQ Section */
+        .faq {
+            background: var(--white);
+        }
+
+        .faq .section-title {
+            color: var(--text-color);
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border: 2px solid var(--light-peach);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .faq-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .faq-item:hover {
+            border-color: var(--primary-color);
+            box-shadow: 0 10px 30px rgba(240, 149, 22, 0.1);
+        }
+
+        .faq-question {
+            background: linear-gradient(135deg, var(--light-peach), var(--light-yellow));
+            padding: 2rem;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--text-color);
+        }
+
+        .faq-question:hover {
+            background: linear-gradient(135deg, var(--primary-color), var(--orange-accent));
+            color: var(--white);
+        }
+
+        .faq-question::after {
+            content: '+';
+            position: absolute;
+            right: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            font-weight: 300;
+            transition: all 0.3s ease;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .faq-question.active::after {
+            transform: translateY(-50%) rotate(45deg);
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .faq-answer {
+            padding: 0 2rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            background: var(--white);
+        }
+
+        .faq-answer.active {
+            padding: 2rem;
+            max-height: 300px;
+        }
+
+        .faq-answer p {
+            color: var(--secondary-color);
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #FDF0CE;
+            color: var(--text-color);
+            text-align: center;
+            padding: 1.5rem 0 1rem;
+            position: relative;
+        }
+
+        .footer-logo {
+            margin-bottom: 2rem;
+        }
+
+        .footer-logo img {
+            height: 80px;
+            width: auto;
+        }
+
+        .footer-address {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-color);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .footer-address .company-name {
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        /* Animations */
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+            
+            .process-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 968px) {
+            .banner {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                text-align: center;
+                padding: 80px 3% 40px;
+                background: 
+                    linear-gradient(0deg, 
+                        rgba(255, 255, 255, 0.95) 0%, 
+                        rgba(255, 255, 255, 0.9) 100%
+                    ),
+                    url('./images/solar-park.jpg') center center/cover;
+            }
+
+            .banner h1 {
+                font-size: 2.5rem;
+            }
+
+            .banner-stats {
+                justify-content: center;
+                gap: 2rem;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo img {
+                height: 45px;
+            }
+
+            .banner {
+                padding: 70px 5% 35px;
+            }
+
+            .banner h1 {
+                font-size: 2.1rem;
+            }
+
+            .banner .subtitle {
+                font-size: 1rem;
+            }
+
+            .banner-stats {
+                flex-direction: row;
+                gap: 1.5rem;
+            }
+
+            .banner-stat-number {
+                font-size: 2rem;
+            }
+
+            .banner-buttons {
+                flex-direction: column;
+                width: 100%;
+                gap: 1rem;
+            }
+
+            .cta-button,
+            .secondary-button {
+                width: 100%;
+                justify-content: center;
+                padding: 18px 35px;
+            }
+
+            .contact-form {
+                max-width: 100%;
+                margin: 0;
+                padding: 2.5rem 2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-logo img {
+                height: 60px;
+            }
+
+            .footer-address {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .banner h1 {
+                font-size: 1.8rem;
+                line-height: 1.1;
+            }
+
+            .banner .badge {
+                font-size: 0.8rem;
+                padding: 0.6rem 1.2rem;
+            }
+
+            .banner-stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .banner-stat {
+                text-align: center;
+            }
+
+            .section {
+                padding: 40px 3%;
+            }
+
+            .contact-form {
+                padding: 2rem 1.5rem;
+            }
+
+            .logo img {
+                height: 40px;
+            }
+
+            .footer-logo img {
+                height: 50px;
+            }
+
+            .footer-address {
+                font-size: 0.9rem;
+                padding: 0 1rem;
+            }
+
+            .footer-address .company-name {
+                font-size: 1rem;
+            }
+        }
+
+        /* Floating Elements */
+        .floating-dots {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        .dot {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: rgba(240, 149, 22, 0.4);
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite;
+            box-shadow: 0 0 10px rgba(240, 149, 22, 0.3);
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(97, 206, 112, 0.5);
+            border-radius: 50%;
+            animation: float 12s linear infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="./images/logo1-1.png" alt="Agni Solar">
+            </div>
+        </nav>
+    </header>
+
+    <!-- Banner Section -->
+    <section class="banner" id="home">
+        <div class="floating-dots"></div>
+        <div class="banner-content">
+            <div class="badge">
+                <i class="fas fa-solar-panel"></i>
+                Leading the Future with Solar Parks
+            </div>
+            <h1><span class="highlight">Open Access Solar Park</span> by Agni Solar: 30 Years of Excellence</h1>
+            <div class="subtitle">Welcome to Agni Solar, where innovation meets sustainability. Our open access Solar Parks are designed to deliver reliable, cost-effective, and clean energy solutions for businesses and communities. With over 30 years of expertise in solar energy, Agni Solar is your trusted partner in harnessing the power of the sun.</div>
+            
+            <div class="banner-stats">
+                <div class="banner-stat">
+                    <span class="banner-stat-number">30+</span>
+                    <span class="banner-stat-label">Years Experience</span>
+                </div>
+                <div class="banner-stat">
+                    <span class="banner-stat-number">500+</span>
+                    <span class="banner-stat-label">MW Capacity</span>
+                </div>
+                <div class="banner-stat">
+                    <span class="banner-stat-number">100+</span>
+                    <span class="banner-stat-label">Solar Parks</span>
+                </div>
+            </div>
+            
+            <div class="banner-buttons">
+                <a href="#process" class="secondary-button">
+                    <i class="fas fa-play-circle"></i>
+                    How It Works
+                </a>
+            </div>
+        </div>
+        <div class="contact-form">
+            <h3>Get Free Solar Park Consultation</h3>
+            <form id="contactForm">
+                <div class="form-group">
+                    <input type="text" placeholder="Your Full Name *" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Business Email *" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Mobile Number *" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Company/Organization Name">
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Energy Requirements & Project Details" rows="3"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-rocket"></i>
+                    Get My Free Consultation
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section class="section why-choose" id="why-choose">
+        <h2 class="section-title">Why Choose Agni Solar for Your Solar Park?</h2>
+        <div class="section-subtitle">Discover the advantages of partnering with India's most experienced solar energy company</div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-award"></i>
+                </div>
+                <h3>Proven Expertise</h3>
+                <p>Three decades of leadership in the solar energy sector with an exceptional track record.</p>
+                <ul class="feature-list">
+                    <li>Over 30 years in the solar energy sector</li>
+                    <li>Successful track record with numerous large-scale solar installations</li>
+                    <li>Industry-leading expertise and innovation</li>
+                </ul>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <h3>Comprehensive Solutions</h3>
+                <p>End-to-end project management from concept to commissioning and beyond.</p>
+                <ul class="feature-list">
+                    <li>Turnkey Projects: From ideation to execution</li>
+                    <li>Site Assessment: Thorough feasibility studies</li>
+                    <li>Custom Design: Tailored solar park solutions</li>
+                </ul>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3>Economic Benefits</h3>
+                <p>Maximize your return on investment with our cost-effective solar solutions.</p>
+                <ul class="feature-list">
+                    <li>Cost Efficiency: Significantly lower electricity costs</li>
+                    <li>Attractive ROI: High returns with reduced payback periods</li>
+                    <li>Flexible Financing: CAPEX and OPEX models available</li>
+                    <li>Power Purchase Agreements (PPA): Predictable rates</li>
+                </ul>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-microchip"></i>
+                </div>
+                <h3>Advanced Infrastructure</h3>
+                <p>State-of-the-art technology with cutting-edge monitoring and control systems.</p>
+                <ul class="feature-list">
+                    <li>Latest solar panels, inverters, and monitoring systems</li>
+                    <li>Real-Time Monitoring: Advanced performance tracking</li>
+                    <li>Shared Resources: Reduced development costs</li>
+                </ul>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-project-diagram"></i>
+                </div>
+                <h3>End-to-End Project Management</h3>
+                <p>Seamless execution with quality assurance at every stage of development.</p>
+                <ul class="feature-list">
+                    <li>Seamless Execution: From consultation to commissioning</li>
+                    <li>Quality Assurance: Rigorous quality control</li>
+                    <li>Timely Delivery: Adherence to project timelines</li>
+                </ul>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h3>Comprehensive Maintenance</h3>
+                <p>Lifetime support with 24/7 monitoring and dedicated maintenance services.</p>
+                <ul class="feature-list">
+                    <li>Lifetime Maintenance: Regular inspections and upkeep</li>
+                    <li>24/7 Support: Round-the-clock assistance</li>
+                    <li>Security and Supervision: Continuous monitoring</li>
+                </ul>
+            </div>
+        </div>
+        <div class="section-cta">
+            <a href="#home" class="cta-btn scroll-to-form">
+                <i class="fas fa-calculator"></i>
+                Get Free Consultation
+            </a>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="section process" id="process">
+        <h2 class="section-title">Our Solar Park Development Process</h2>
+        <div class="section-subtitle">A proven methodology that ensures successful solar park implementation from start to finish</div>
+        <div class="process-steps">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <h3>Consultation & Feasibility Study</h3>
+                <p>Initial consultation to understand energy requirements and detailed feasibility studies to assess site potential and financial viability.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <h3>Customized Proposal</h3>
+                <p>Comprehensive proposals with transparent pricing, detailed benefits, and tailored solutions to meet specific client needs.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <h3>Professional Installation</h3>
+                <p>Efficient installation with minimal disruption and coordination with local authorities for seamless integration.</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <h3>System Activation & Support</h3>
+                <p>Activation, thorough performance testing, real-time monitoring setup, and ongoing maintenance with dedicated support.</p>
+            </div>
+        </div>
+        <div class="section-cta">
+            <a href="#home" class="cta-btn scroll-to-form">Start Your Solar Park Journey</a>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="section benefits" id="benefits">
+        <h2 class="section-title">Benefits of Solar Parks with Agni Solar</h2>
+        <div class="section-subtitle">Discover the transformative advantages of clean energy infrastructure</div>
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h3>Sustainable Energy</h3>
+                <p>Clean, renewable energy to power your business operations while reducing your carbon footprint and contributing to environmental sustainability.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-piggy-bank"></i>
+                </div>
+                <h3>Significant Cost Savings</h3>
+                <p>Dramatic reductions in electricity costs with predictable energy pricing that protects against volatile utility rates and inflation.</p>
+            </div>
+            <div class="benefit-card">
+                <div class="benefit-icon">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <h3>Achieve Net Zero Goals</h3>
+                <p>Meet your sustainability objectives and corporate social responsibility commitments while enhancing your brand reputation.</p>
+            </div>
+        </div>
+        <div class="section-cta">
+            <a href="#home" class="cta-btn scroll-to-form">Partner With Us Today</a>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="section-subtitle">Get answers to common questions about Open Access Solar Parks</div>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">What is an Open Access Solar Park and how does it work?</div>
+                <div class="faq-answer">
+                    <p>An Open Access Solar Park is a large-scale solar power facility where multiple consumers can purchase electricity directly from the solar park through open access regulations. This allows businesses to access clean, renewable energy at competitive rates without installing solar panels on their own premises. The electricity is transmitted through the existing grid infrastructure.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What are the benefits of investing in an Open Access Solar Park?</div>
+                <div class="faq-answer">
+                    <p>Key benefits include significant cost savings (20-30% reduction in electricity costs), long-term price stability, achievement of sustainability goals, reduced carbon footprint, no upfront capital investment required, professional maintenance and operation, and the ability to meet corporate social responsibility objectives while enhancing brand reputation.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What is the minimum capacity requirement to participate in Open Access?</div>
+                <div class="faq-answer">
+                    <p>The minimum contract demand for Open Access varies by state but is typically 1 MW or higher. However, through our aggregation model, smaller consumers can also participate by pooling their requirements together. We work with businesses of all sizes to find suitable solutions for accessing solar power through our parks.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">How long does it take to set up an Open Access agreement?</div>
+                <div class="faq-answer">
+                    <p>The complete process typically takes 3-6 months, including regulatory approvals, grid connectivity studies, and commercial agreements. This includes obtaining necessary approvals from state electricity regulatory commissions, executing power purchase agreements, and completing grid synchronization. Our team handles all regulatory procedures to ensure smooth implementation.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What financing options are available for Solar Park investments?</div>
+                <div class="faq-answer">
+                    <p>We offer flexible financing models including CAPEX (capital expenditure), OPEX (operational expenditure), Power Purchase Agreements (PPA), and hybrid financing options. Under PPA models, you can access solar power with zero upfront investment and pay only for the electricity consumed at predetermined rates, making it financially attractive for businesses of all sizes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="footer-logo">
+            <img src="./images/logo1-1.png" alt="Agni Solar">
+        </div>
+        <div class="footer-address">
+            <span class="company-name">AGNI SOLAR SYSTEMS PVT. LTD.</span>
+            702 Onyx, North Main Road,<br>
+            Koregoan Park, Pune 411001
+        </div>
+        
+        <!-- Dev Navigation (Remove Later) -->
+        <div style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #ddd;">
+            <div style="font-size: 0.9rem; color: #666;">
+                <strong>Navigation:</strong> 
+                <a href="index.html" style="color: var(--primary-color); text-decoration: none; margin: 0 0.5rem;">Commercial Solar</a> | 
+                <a href="opensolarpark.html" style="color: var(--primary-color); text-decoration: none; margin: 0 0.5rem;">Open Access Solar Park</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        // Observe elements for animation
+        document.querySelectorAll('.section-title, .section-subtitle, .feature-card, .benefit-card, .process-step, .faq-item').forEach(el => {
+            observer.observe(el);
+        });
+
+        // CTA button scroll functionality
+        document.querySelectorAll('.scroll-to-form').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector('#home .contact-form').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+
+        // FAQ functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const faqItem = this.parentElement;
+                const answer = faqItem.querySelector('.faq-answer');
+                
+                // Close all other FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== faqItem) {
+                        item.querySelector('.faq-question').classList.remove('active');
+                        item.querySelector('.faq-answer').classList.remove('active');
+                    }
+                });
+                
+                // Toggle current FAQ item
+                this.classList.toggle('active');
+                answer.classList.toggle('active');
+            });
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success message
+            alert('Thank you for your inquiry! We will contact you shortly to discuss your solar park requirements.');
+            
+            // Reset form
+            this.reset();
+        });
+
+        // Create floating dots animation
+        function createFloatingDots() {
+            const container = document.querySelector('.floating-dots');
+            const numberOfDots = 20;
+            
+            for (let i = 0; i < numberOfDots; i++) {
+                const dot = document.createElement('div');
+                dot.className = Math.random() > 0.7 ? 'particle' : 'dot';
+                dot.style.left = Math.random() * 100 + '%';
+                dot.style.top = Math.random() * 100 + '%';
+                dot.style.animationDelay = Math.random() * 8 + 's';
+                dot.style.animationDuration = (6 + Math.random() * 6) + 's';
+                container.appendChild(dot);
+            }
+        }
+
+        // Initialize floating dots
+        createFloatingDots();
+
+        // Add staggered animation delays
+        function addStaggeredAnimations() {
+            // Feature cards
+            document.querySelectorAll('.feature-card').forEach((card, index) => {
+                card.style.transitionDelay = (index * 0.1) + 's';
+            });
+            
+            // Process steps
+            document.querySelectorAll('.process-step').forEach((step, index) => {
+                step.style.transitionDelay = (index * 0.15) + 's';
+            });
+            
+            // Benefit cards
+            document.querySelectorAll('.benefit-card').forEach((card, index) => {
+                card.style.transitionDelay = (index * 0.2) + 's';
+            });
+        }
+
+        // Initialize staggered animations
+        addStaggeredAnimations();
+
+        // Enhanced scroll effects
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            const scrollY = window.scrollY;
+            
+            // Header scroll effect
+            if (scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            // Parallax effect for banner
+            const banner = document.querySelector('.banner');
+            if (banner) {
+                const rate = scrollY * -0.3;
+                banner.style.transform = `translateY(${rate}px)`;
+            }
+        });
+
+        // Add loading animation
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s';
+            
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+    </script>
+</body>
+</html>

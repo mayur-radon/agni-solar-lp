@@ -4,7 +4,7 @@ Sub-headline: Achieve energy independence and significant cost savings with our 
 
 300+ Happy Clients
 500+ MW Installed Capacity
-10+ Years of Experience
+30+ Years of Experience
 
 Trusted by Industry Leaders
 Headline: Join the Growing Number of Businesses Choosing Sustainable Energy
@@ -37,7 +37,7 @@ Ongoing Support & Maintenance: We provide comprehensive support and maintenance 
 
 Why Agni Solar is India's #1 Choice
 Headline: The Leading Solar Company in India
-10+ Years of Excellence: With over a decade of experience, we are one of the most trusted solar energy companies in India.
+30+ Years of Excellence: With over a decade of experience, we are one of the most trusted solar energy companies in India.
 500+ MW Success Stories: We have a proven track record of successful commercial solar installation projects across various industries.
 Premium Support: Our dedicated team of solar panel installers in my area provides exceptional customer service and support.
 
