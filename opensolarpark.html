@@ -37,7 +37,7 @@
 
         /* Header */
         header {
-            background: #fffaf3;
+            background: #ffffff;
             padding: 0.5rem 0;
             position: fixed;
             width: 100%;
@@ -48,9 +48,11 @@
         }
 
         header.scrolled {
-            background: #fffaf3;
+            background: rgba(255, 255, 255, 0.75) !important;
             padding: 0.4rem 0;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
 
         nav {
