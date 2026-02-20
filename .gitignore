@@ -1,1 +1,3 @@
-/desktop.ini
+# Windows thumbnail/metadata files
+desktop.ini
+**/desktop.ini
